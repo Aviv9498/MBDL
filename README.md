@@ -50,7 +50,7 @@ The diagram below illustrates the system pipeline:
 
   - Two types of features are computed from the signal:
 
-    - Empirical autocorrelation $\hat{R}_{X}[\tau]$ over lags $\tau = 0, \dots, \tau{\max}$
+    - Empirical autocorrelation $\hat{R}_{X}[\tau]$ over lags $\tau = 0, \dots, \tau_{max}$
 
     - Sample covariance $R_X = \frac{1}{T} \sum_{t=1}^T x(t)x^H(t)$
 
