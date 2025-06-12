@@ -50,7 +50,7 @@ The diagram below illustrates the system pipeline:
 
   - Two types of features are computed from the signal:
 
-    - Empirical autocorrelation $\hat{R}_{X}[\tau]$ over lags $\tau = 0, \dots, \tau_{max}$
+    - Empirical autocorrelation $\hat{R}_{X}[\tau]$ over lags $\tau = 0, \dots, \tau{\max}$
 
     - Sample covariance $R_X = \frac{1}{T} \sum_{t=1}^T x(t)x^H(t)$
 
@@ -77,11 +77,11 @@ The diagram below illustrates the system pipeline:
 
 We evaluated performance across:
 
-1.***SNR levels** (fixed $T$)
+1.**SNR levels** (fixed $T$)
 
-2.***Snapshot counts*** (fixed SNR)
+2.**Snapshot counts** (fixed SNR)
 
-3.***Both coherent and non-coherent source scenarios***
+3.**Both coherent and non-coherent source scenarios**
 
 Key Findings:
 
