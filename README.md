@@ -40,33 +40,48 @@ The diagram below illustrates the system pipeline:
 
 ![Architecture Diagram](architecture.jpg)
 
-### Pipeline:
+### 🧠 Architecture Description
 
-Input Signal $x(t)$
+1.**Input Signal**:
 
-Compute:
+  - The raw time-series signal $x(t) \in \mathbb{C}^N$ is collected from a Uniform Linear Array.
 
-Empirical autocorrelation $\hat{R}_X[\tau]$
+2.**Feature Extraction**:
 
-Sample covariance $R_X$
+  - Two types of features are computed from the signal:
 
-CNN autoencoder processes $\hat{R}_X[\tau]$ to produce $\hat{R}(X;\theta)$
+    - Empirical autocorrelation $\hat{R}X[\tau]$ over lags $\tau = 0, \dots, \tau{\max}$
 
-Merge via $\tilde{R}_X = \lambda \cdot \hat{R}(X;\theta) + (1 - \lambda) \cdot R_X$
+    - Sample covariance $R_X = \frac{1}{T} \sum_{t=1}^T x(t)x^H(t)$
 
-MDL test produces a test vector
+3.**Surrogate Covariance Learning**:
 
-MLP predicts the number of sources
+  - The autocorrelation matrices are passed through a CNN autoencoder to produce a learned covariance estimate $\hat{R}          (X;\theta)$.
+
+4.**Covariance Fusion**:
+
+  - A weighted combination of the learned and raw covariance matrices is computed:
+
+
+5.**Model Order Estimation**:
+
+  - The fused covariance $\tilde{R}_X$ is processed using the MDL criterion, producing a vector of test values for all           candidate source counts.
+
+6.**Final Prediction**:
+
+  - An MLP classifier is used to interpret the test vector and output the predicted number of active sources.
+
+---
 
 ## 📊 Results Overview
 
 We evaluated performance across:
 
-SNR levels (fixed $T$)
+1.***SNR levels** (fixed $T$)
 
-Snapshot counts (fixed SNR)
+2.***Snapshot counts*** (fixed SNR)
 
-Both coherent and non-coherent source scenarios
+3.***Both coherent and non-coherent source scenarios***
 
 Key Findings:
 
