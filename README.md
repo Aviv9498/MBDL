@@ -1,16 +1,18 @@
-📡 Model-Based Deep Learning for Model Order Selection
+# 📡 Model-Based Deep Learning for Model Order Selection
 
 This repository presents a hybrid model-based deep learning approach for model order selection, developed as part of the Model-Based Deep Learning (MBDL) course project at Ben-Gurion University.
 
 Our approach enhances classical hypothesis testing (e.g., MDL criterion) with learned representations to improve performance in challenging settings such as coherent sources, low SNR, and short observation durations.
 
-📖 Overview
+---
+  
+## 📖 Overview
 
-🎯 Goal
+### 🎯 Goal
 
 Accurately estimate the number of signal sources impinging on an array of antennas using both classic statistical methods and deep learning.
 
-🔍 Classical Limitation
+### 🔍 Classical Limitation
 
 Methods like MDL and AIC degrade in practical scenarios:
 
@@ -18,7 +20,7 @@ When sources are coherent (e.g., highly correlated)
 
 Under low SNR or few snapshots
 
-💡 Our Contribution
+### 💡 Our Contribution
 
 We propose a deep-learning-enhanced architecture that:
 
@@ -30,11 +32,15 @@ Combines the learned and classic covariances into a hybrid matrix
 
 Passes this to an MDL test followed by an MLP classifier for robust source count prediction
 
-🖥️ System Architecture
+---
 
+## 🖥️ System Architecture
 
+The diagram below illustrates the system pipeline:
 
-Pipeline:
+![Architecture Diagram](architecture.jpg)
+
+### Pipeline:
 
 Input Signal $x(t)$
 
@@ -52,7 +58,7 @@ MDL test produces a test vector
 
 MLP predicts the number of sources
 
-📊 Results Overview
+## 📊 Results Overview
 
 We evaluated performance across:
 
@@ -68,27 +74,16 @@ Our MBDL model consistently outperforms classical MDL, especially under coherenc
 
 Generalized models trained on a single SNR or $T$ generalize well across varying test conditions
 
-🛠️ Implementation Details
-
-Dataset: $|\mathcal{D}| = 3000$ samples
-
-Loss: Cross-Entropy (with weighted labels for balance)
-
-Optimizer: Adam
-
-Learning Rate: $10^{-4}$
-
-Batch Size: 64
-
-Epochs: 100
-
-📚 References
+---
+## 📚 References
 
 Arad Gast et al., "Near Field Localization via AI-Aided Subspace Methods", 2025.
 
 Julian Merkofer et al., "Deep Augmented MUSIC Algorithm for Data-Driven DoA Estimation", ICASSP 2022.
 
-👥 Contributors
+--- 
+
+## 👥 Contributors
 
 Aviv Ben Ari
 
