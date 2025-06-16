@@ -38,7 +38,7 @@ Passes this to an MDL test followed by an MLP classifier for robust source count
 
 The diagram below illustrates the system pipeline:
 
-![Architecture Diagram](architecture.jpg)
+![Architecture Diagram](architecture2.png)
 
 ### 🧠 Architecture Description
 
